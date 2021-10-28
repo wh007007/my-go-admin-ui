@@ -7,7 +7,7 @@ RUN npm install
 RUN npm run build
 
 FROM nginx:alpine
-LABEL MAINTAINER="SliverHorn@sliver_horn@qq.com"
+
 
 COPY ./nginx/conf.d/my.conf /etc/nginx/conf.d/my.conf
 COPY --from=0 /gva_web/dist /usr/share/nginx/html
